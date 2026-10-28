@@ -1,0 +1,590 @@
+/* ========================================
+   HISTORIAL DEL ALUMNO
+======================================== */
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* ========================================
+   REGRESAR
+======================================== */
+
+.history-navigation {
+    width: min(1180px, 88%);
+    margin: 32px auto 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--gray);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.back-link:hover {
+    color: var(--navy);
+    transform: translateX(-3px);
+}
+
+/* ========================================
+   PRESENTACIÓN
+======================================== */
+
+.history-welcome {
+    width: min(1180px, 88%);
+    margin: 38px auto 0;
+    padding: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    box-shadow: 0 12px 30px rgba(31, 35, 89, 0.06);
+}
+
+.history-welcome__content {
+    max-width: 720px;
+}
+
+.history-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    color: var(--green-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.history-welcome h2 {
+    margin: 0;
+
+    color: var(--navy);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+}
+
+.history-welcome p {
+    margin: 14px 0 0;
+
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.history-welcome__icon {
+    width: 92px;
+    height: 92px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--navy);
+    font-size: 2.3rem;
+
+    background: var(--green);
+    border-radius: 28px;
+}
+
+/* ========================================
+   RESUMEN
+======================================== */
+
+.history-summary {
+    width: min(1180px, 88%);
+    margin: 24px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.summary-card {
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(31, 35, 89, 0.05);
+}
+
+.summary-card > i {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--green-dark);
+    font-size: 1.3rem;
+
+    background: rgba(143, 220, 167, 0.25);
+    border-radius: 15px;
+}
+
+.summary-card span {
+    display: block;
+
+    color: var(--navy);
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.summary-card p {
+    margin: 2px 0 0;
+
+    color: var(--gray);
+    font-size: 0.86rem;
+}
+
+/* ========================================
+   ESTADOS
+======================================== */
+
+.history-status {
+    width: min(760px, 88%);
+    min-height: 280px;
+    margin: 48px auto 80px;
+    padding: 42px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(31, 35, 89, 0.06);
+}
+
+.history-status > i {
+    margin-bottom: 18px;
+
+    color: var(--green-dark);
+    font-size: 2.5rem;
+}
+
+.history-status h2 {
+    margin: 0 0 10px;
+
+    color: var(--navy);
+    font-size: 1.5rem;
+}
+
+.history-status p {
+    max-width: 520px;
+    margin: 0;
+
+    color: var(--gray);
+    line-height: 1.65;
+}
+
+.status-button {
+    margin-top: 24px;
+    padding: 12px 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--navy);
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+
+    background: var(--green);
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.status-button:hover {
+    color: var(--white);
+    background: var(--green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(63, 143, 99, 0.24);
+}
+
+/* ========================================
+   CONTENIDO DEL HISTORIAL
+======================================== */
+
+.history-content {
+    width: min(1180px, 88%);
+    margin: 44px auto 80px;
+}
+
+.history-heading {
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.history-heading span {
+    color: var(--green-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.history-heading h2 {
+    margin: 5px 0 0;
+
+    color: var(--navy);
+    font-size: 1.8rem;
+}
+
+.history-heading > p {
+    margin: 0;
+
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========================================
+   TARJETA DE INTENTO
+======================================== */
+
+.history-card {
+    padding: 28px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left-width: 6px;
+    border-radius: 22px;
+    box-shadow: 0 10px 28px rgba(31, 35, 89, 0.05);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.history-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 34px rgba(31, 35, 89, 0.09);
+}
+
+.history-card.excellent {
+    border-left-color: var(--green-dark);
+}
+
+.history-card.regular {
+    border-left-color: #d8a736;
+}
+
+.history-card.needs-practice {
+    border-left-color: #c65d58;
+}
+
+.history-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.history-card__title {
+    flex: 1;
+}
+
+.history-category {
+    display: inline-flex;
+
+    padding: 6px 12px;
+    margin-bottom: 12px;
+
+    color: var(--green-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    background: rgba(143, 220, 167, 0.25);
+    border-radius: 20px;
+}
+
+.history-card h3 {
+    margin: 0;
+
+    color: var(--navy);
+    font-size: 1.35rem;
+}
+
+.history-card__title p {
+    margin: 9px 0 0;
+
+    color: var(--gray);
+    line-height: 1.55;
+}
+
+.history-grade {
+    min-width: 110px;
+    padding: 15px;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+
+    color: var(--navy);
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+}
+
+.history-grade span {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.history-grade small {
+    color: var(--gray);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   DATOS DEL INTENTO
+======================================== */
+
+.history-card__meta {
+    margin-top: 20px;
+    padding-top: 18px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+
+    color: var(--gray);
+    font-size: 0.86rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.history-card__meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-card__meta i {
+    color: var(--green-dark);
+}
+
+/* ========================================
+   RESULTADOS DEL INTENTO
+======================================== */
+
+.history-card__results {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.history-result {
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.history-result > i {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+}
+
+.history-result.success > i {
+    color: var(--green-dark);
+    background: rgba(143, 220, 167, 0.25);
+}
+
+.history-result.error > i {
+    color: #c33f3a;
+    background: rgba(195, 63, 58, 0.1);
+}
+
+.history-result.total > i,
+.history-result.percentage > i {
+    color: var(--navy);
+    background: rgba(31, 35, 89, 0.08);
+}
+
+.history-result span {
+    display: block;
+
+    color: var(--navy);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.history-result p {
+    margin: 1px 0 0;
+
+    color: var(--gray);
+    font-size: 0.76rem;
+}
+
+/* ========================================
+   UTILIDADES
+======================================== */
+
+.history-status.hidden,
+.history-summary.hidden,
+.history-content.hidden {
+    display: none;
+}
+
+.history-card__actions {
+    margin-top: 22px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.history-detail-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 12px;
+    background: var(--green-dark);
+    color: var(--white);
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.history-detail-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(63,143,99,.25);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+    .history-card__results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .history-navigation,
+    .history-welcome,
+    .history-summary,
+    .history-content {
+        width: 90%;
+    }
+
+    .history-welcome {
+        padding: 28px 24px;
+    }
+
+    .history-welcome__icon {
+        display: none;
+    }
+
+    .history-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .history-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .history-card__header {
+        flex-direction: column;
+    }
+
+    .history-grade {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .history-card {
+        padding: 22px;
+    }
+
+    .history-card__results {
+        grid-template-columns: 1fr;
+    }
+
+    .history-card__meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

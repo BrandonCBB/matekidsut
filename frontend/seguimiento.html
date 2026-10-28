@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seguimiento de alumnos | MateKids UT</title>
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/seguimiento.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="maestro.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="maestro.html">Inicio</a>
+            <a href="maestro.html#misEjercicios">Mis ejercicios</a>
+            <a href="seguimiento.html" class="active">Alumnos</a>
+        </nav>
+
+        <div class="header-account">
+
+            <!-- Usuario con sesión -->
+            <div class="user-menu hidden" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Maestro</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="seguimiento-main">
+
+        <a href="maestro.html" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
+            Regresar al panel
+        </a>
+
+        <section class="hero">
+
+            <h1>
+                <i class="fa-solid fa-users"></i>
+                Seguimiento de alumnos
+            </h1>
+
+            <p>
+                Consulta el progreso y desempeño de tus alumnos.
+            </p>
+
+        </section>
+
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="buscarAlumno"
+                placeholder="Buscar alumno...">
+
+        </section>
+
+        <section
+            id="contenedorAlumnos"
+            class="cards-container">
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/seguimiento.js"></script>
+
+</body>
+
+</html>

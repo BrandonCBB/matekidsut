@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Panel del maestro</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/maestro.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+</head>
+
+<body class="protected-page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="maestro.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="maestro.html" class="active">Inicio</a>
+            <a href="#misEjercicios">Mis ejercicios</a>
+            <a href="seguimiento.html">Alumnos</a>
+        </nav>
+
+        <div class="header-account">
+
+            <!-- Usuario con sesión -->
+            <div class="user-menu hidden" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Maestro</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="teacher-main">
+
+        <!-- BIENVENIDA -->
+        <section class="teacher-welcome">
+            <div>
+                <p class="section-label">Panel del maestro</p>
+
+                <h2>
+                    Buenos días,
+                    <span id="teacherName">maestro</span>
+                    👋
+                </h2>
+
+                <p>
+                    Administra los ejercicios y actividades de tus alumnos
+                    desde un solo lugar.
+                </p>
+            </div>
+
+            <button type="button" class="create-button" id="createExerciseButton">
+                <i class="fa-solid fa-plus"></i>
+                Crear ejercicio
+            </button>
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="exerciseCount">0</span>
+                    <p>Ejercicios creados</p>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="studentCount">0</span>
+                    <p>Alumnos</p>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="answerCount">0</span>
+                    <p>Respuestas recibidas</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- MIS EJERCICIOS -->
+        <section class="teacher-exercises" id="misEjercicios">
+
+            <div class="section-header">
+                <div>
+                    <p class="section-label">Contenido</p>
+                    <h2>Mis ejercicios</h2>
+                </div>
+
+
+                <div class="section-actions">
+
+                    <a href="seguimiento.html" class="secondary-button">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Seguimiento
+                    </a>
+
+                    <button
+                        type="button"
+                        class="secondary-create-button">
+
+                        <i class="fa-solid fa-plus"></i>
+                        Nuevo ejercicio
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ESTADO VACÍO -->
+            <div class="empty-state" id="emptyState">
+
+                <div class="empty-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+
+                <h3>Aún no has creado ejercicios</h3>
+
+                <p>
+                    Cuando agregues un ejercicio, aparecerá en esta sección
+                    para que puedas editarlo o eliminarlo.
+                </p>
+
+                <button type="button" class="empty-button">
+                    Crear el primer ejercicio
+                </button>
+
+            </div>
+
+            <!-- AQUÍ APARECERÁN LOS EJERCICIOS -->
+            <div class="exercise-list hidden" id="exerciseList">
+                <!-- JavaScript cargará aquí los ejercicios -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/maestro.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,459 @@
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+
+.practice-main{
+    width:min(900px,92%);
+    margin:2rem auto 4rem;
+}
+
+/* ==========================
+   VOLVER
+========================== */
+
+.back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+
+    text-decoration:none;
+    color:var(--green-dark);
+
+    font-weight:600;
+    margin-bottom:2rem;
+}
+
+.back-link:hover{
+    color:var(--navy);
+}
+
+/* ==========================
+   ENCABEZADO
+========================== */
+
+.practice-header{
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+.practice-header h2{
+    color:var(--navy);
+    margin:.5rem 0;
+}
+
+.practice-header p:last-child{
+    color:var(--gray);
+}
+
+/* ==========================
+   TARJETA
+========================== */
+
+.practice-card{
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:2rem;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+/* ==========================
+   PROGRESO
+========================== */
+
+.practice-progress{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+
+    background:#e8ecef;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin-bottom:2rem;
+}
+
+.progress-value{
+    width:20%;
+    height:100%;
+
+    background:var(--green);
+
+    transition:.35s;
+}
+
+/* ==========================
+   OPERACIÓN
+========================== */
+
+.operation-container{
+    text-align:center;
+    margin:2rem 0;
+}
+
+.operation-label{
+    color:var(--gray);
+    margin-bottom:1rem;
+}
+
+.operation{
+    font-size:3rem;
+    color:var(--navy);
+    font-weight:700;
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+#practiceForm{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+#practiceForm label{
+    font-weight:600;
+}
+
+#practiceForm input{
+
+    width:100%;
+
+    padding:1rem;
+
+    border:2px solid var(--border);
+
+    border-radius:14px;
+
+    font-size:1.1rem;
+
+    text-align:center;
+}
+
+#practiceForm input:focus{
+    outline:none;
+    border-color:var(--green-dark);
+}
+
+.practice-button{
+
+    background:var(--green);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:1rem;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.practice-button:hover{
+    background:var(--green-dark);
+}
+
+/* ==========================
+   RESPUESTA
+========================== */
+
+.answer-feedback{
+
+    margin-top:1.5rem;
+
+    padding:1rem;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    text-align:center;
+}
+
+.answer-feedback.correct{
+    background:#d8f7df;
+    color:#176d39;
+}
+
+.answer-feedback.incorrect{
+    background:#ffe0e0;
+    color:#b11818;
+}
+
+.hidden{
+    display:none;
+}
+
+/* ==========================
+   RESULTADO
+========================== */
+
+.practice-result{
+
+    background:var(--white);
+
+    padding:2.5rem;
+
+    border-radius:24px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+    text-align:center;
+}
+
+.result-icon{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--green);
+
+    color:white;
+
+    font-size:2rem;
+
+    margin-bottom:1rem;
+}
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+    margin:2rem 0;
+}
+
+.result-grid article{
+
+    background:#f8f9fa;
+
+    border-radius:18px;
+
+    padding:1.2rem;
+}
+
+.result-grid span{
+
+    display:block;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:var(--navy);
+}
+
+.result-grid p{
+    margin-top:.5rem;
+}
+
+.result-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+}
+
+.secondary-button{
+
+    padding:1rem 1.5rem;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    color:var(--navy);
+
+    border:2px solid var(--navy);
+
+    font-weight:600;
+}
+
+.secondary-button:hover{
+
+    background:var(--navy);
+
+    color:white;
+}
+
+.header nav a{
+    position:relative;
+}
+
+.header nav a.active{
+    color:var(--navy);
+}
+
+.header nav a.active::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:-8px;
+
+    height:3px;
+
+    border-radius:999px;
+
+    background:var(--green);
+}
+
+/* ==========================
+   OPERACIÓN VERTICAL
+========================== */
+
+.vertical-operation{
+    width:max-content;
+    min-width:170px;
+
+    margin:1.5rem auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+
+    font-size:3.3rem;
+    line-height:1.1;
+    font-weight:700;
+
+    color:var(--navy);
+}
+
+.operation-top{
+    padding-right:.2rem;
+}
+
+.operation-bottom{
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:2rem;
+}
+
+.operation-symbol{
+    color:var(--green-dark);
+}
+
+.operation-number{
+    margin-left:auto;
+}
+
+.operation-line{
+    width:100%;
+    height:4px;
+
+    margin-top:.5rem;
+
+    border-radius:999px;
+
+    background:var(--navy);
+}
+
+/* ==========================
+   DIVISIÓN HORIZONTAL
+========================== */
+
+.horizontal-division{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+
+    margin:2rem auto;
+
+    font-size:3rem;
+    font-weight:700;
+
+    color:var(--navy);
+}
+
+.division-symbol{
+    color:var(--green-dark);
+}
+
+.answer-space{
+    min-width:70px;
+
+    padding:.2rem .8rem;
+
+    border-bottom:4px solid var(--navy);
+}
+
+/* ==========================
+   RESPONSIVE OPERACIÓN
+========================== */
+
+@media(max-width:700px){
+
+    .vertical-operation{
+        font-size:2.7rem;
+        min-width:140px;
+    }
+
+    .horizontal-division{
+        gap:.6rem;
+        font-size:2.2rem;
+    }
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:700px){
+
+    .operation{
+        font-size:2.2rem;
+    }
+
+    .practice-progress{
+        flex-direction:column;
+        gap:.5rem;
+    }
+
+    .result-grid{
+        grid-template-columns:1fr;
+    }
+
+}

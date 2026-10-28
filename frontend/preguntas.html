@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Preguntas del ejercicio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+    <link rel="stylesheet" href="assets/css/preguntas.css">
+</head>
+
+<body class="protected-page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="maestro.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="maestro.html">Inicio</a>
+            <a href="maestro.html#misEjercicios" class="active">
+                Mis ejercicios
+            </a>
+        </nav>
+
+        <div class="header-account">
+
+            <div class="user-menu" id="userMenu">
+
+                <button
+                    type="button"
+                    class="user-button"
+                    id="userButton"
+                >
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Docente</span>
+
+                    <i
+                        class="fa-solid fa-chevron-down arrow-icon"
+                    ></i>
+                </button>
+
+                <div
+                    class="user-dropdown hidden"
+                    id="userDropdown"
+                >
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="questions-main">
+
+        <!-- REGRESAR -->
+        <a href="maestro.html#misEjercicios" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver a mis ejercicios
+        </a>
+
+        <!-- INFORMACIÓN DEL EJERCICIO -->
+        <section class="exercise-header-card">
+
+            <div class="exercise-header-icon" id="exerciseCategoryIcon">
+                <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+
+            <div class="exercise-header-info">
+
+                <p class="section-label" id="exerciseCategory">
+                    Categoría
+                </p>
+
+                <h2 id="exerciseTitle">
+                    Cargando ejercicio...
+                </h2>
+
+                <p id="exerciseDescription">
+                    Espera un momento mientras cargamos la información.
+                </p>
+
+                <div class="exercise-meta">
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        <span id="exerciseDate">—</span>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-list-ol"></i>
+                        <span id="questionCount">0 preguntas</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="add-question-button"
+                id="addQuestionButton"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Agregar pregunta
+            </button>
+
+        </section>
+
+        <!-- PREGUNTAS -->
+        <section class="questions-section">
+
+            <div class="questions-heading">
+                <div>
+                    <p class="section-label">Contenido</p>
+                    <h2>Preguntas</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-question-button"
+                    id="secondaryAddQuestionButton"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Nueva pregunta
+                </button>
+            </div>
+
+            <!-- ESTADO VACÍO -->
+            <div class="questions-empty" id="questionsEmpty">
+
+                <div class="empty-question-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+
+                <h3>Aún no has agregado preguntas</h3>
+
+                <p>
+                    Agrega la primera pregunta y su respuesta correcta
+                    para comenzar a construir este ejercicio.
+                </p>
+
+                <button
+                    type="button"
+                    class="empty-question-button"
+                    id="emptyAddQuestionButton"
+                >
+                    Agregar la primera pregunta
+                </button>
+
+            </div>
+
+            <!-- LISTA -->
+            <div class="questions-list hidden" id="questionsList">
+                <!-- JavaScript agregará las preguntas -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/preguntas.js"></script>
+
+</body>
+
+</html>

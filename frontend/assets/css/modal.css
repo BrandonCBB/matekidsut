@@ -1,0 +1,220 @@
+/* ========================================
+   MODAL
+======================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(31, 35, 89, 0.42);
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    position: relative;
+
+    width: min(520px, 100%);
+    max-height: 90vh;
+    padding: 38px;
+
+    overflow-y: auto;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+
+    animation: modalAppear 0.25s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--gray);
+    background: transparent;
+    border-radius: 10px;
+
+    font-size: 1.15rem;
+}
+
+.modal-close:hover {
+    color: var(--navy);
+    background: var(--bg);
+}
+
+.modal-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--green),
+        var(--green-dark)
+    );
+
+    border-radius: 22px;
+    font-size: 1.8rem;
+}
+
+.modal-container h2 {
+    margin-bottom: 18px;
+
+    color: var(--navy);
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.modal-content {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.modal-actions {
+    margin-top: 28px;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.modal-button {
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.modal-cancel-button {
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.modal-cancel-button:hover {
+    background: var(--bg);
+}
+
+.modal-confirm-button {
+    color: var(--white);
+    background: var(--green);
+}
+
+.modal-confirm-button:hover {
+    background: var(--green-dark);
+}
+
+.modal-confirm-button.danger {
+    background: #b64a4a;
+}
+
+.modal-confirm-button.danger:hover {
+    background: #913737;
+}
+
+
+/* ========================================
+   FORMULARIOS DENTRO DEL MODAL
+======================================== */
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-field label {
+    color: var(--navy);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.modal-field textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.modal-field input:focus,
+.modal-field select:focus,
+.modal-field textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(143, 220, 167, 0.18);
+}
+.modal-overlay.hidden {
+    display: none;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 550px) {
+    .modal-container {
+        padding: 32px 22px 24px;
+        border-radius: 24px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-button {
+        width: 100%;
+    }
+}

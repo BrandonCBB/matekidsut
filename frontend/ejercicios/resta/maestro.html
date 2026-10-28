@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Ejercicios de Resta</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/alumno.css">
+    <link rel="stylesheet" href="../../assets/css/ejercicios-alumnos.css">
+</head>
+
+<body data-tema="Resta">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="../../alumno.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="../../alumno.html">Inicio</a>
+
+            <a href="../suma/menu.html" >
+                Suma
+            </a>
+
+            <a href="../resta/menu.html" class="active">
+                Resta
+            </a>
+
+            <a href="../multiplicacion/menu.html" >
+                Multiplicación
+            </a>
+
+            <a href="../division/menu.html">
+                División
+            </a>
+        </nav>
+
+        <div class="header-account">
+
+            <div class="user-menu" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Alumno</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+                    <a href="../../perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <a href="../../historial.html">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Mi historial
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- VOLVER -->
+        <section class="exercise-navigation">
+            <a href="menu.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver al menú de Resta
+            </a>
+        </section>
+
+        <!-- ENCABEZADO -->
+        <section class="welcome">
+
+            <h2 id="tituloTema">
+                Ejercicios de Suma
+            </h2>
+
+            <p>
+                Selecciona un ejercicio creado por un docente para comenzar.
+            </p>
+
+        </section>
+
+        <!-- ESTADO DE CARGA -->
+        <section id="estadoCarga" class="exercise-status">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <h3>Cargando ejercicios...</h3>
+
+            <p>
+                Espera un momento mientras buscamos los ejercicios disponibles.
+            </p>
+        </section>
+
+        <!-- ESTADO VACÍO -->
+        <section id="estadoVacio" class="exercise-status hidden">
+            <i class="fa-regular fa-folder-open"></i>
+
+            <h3>No hay ejercicios disponibles</h3>
+
+            <p>
+                Todavía no existen ejercicios con preguntas para este tema.
+            </p>
+        </section>
+
+        <!-- LISTA DE EJERCICIOS -->
+        <section class="teacher-exercises">
+
+            <h2>Ejercicios disponibles</h2>
+
+            <div id="listaEjercicios" class="exercise-grid hidden">
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../../assets/js/session.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/ejercicios-alumno.js"></script>
+
+</body>
+
+</html>

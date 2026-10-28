@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Suma</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/menu-tema.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="../../alumno.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="../../alumno.html">Inicio</a>
+
+            <a href="../suma/menu.html" class="active">
+                Suma
+            </a>
+
+            <a href="../resta/menu.html">
+                Resta
+            </a>
+
+            <a href="../multiplicacion/menu.html">
+                Multiplicación
+            </a>
+
+            <a href="../division/menu.html">
+                División
+            </a>
+        </nav>
+
+        <div class="header-account">
+        <!-- Visitante -->
+            <div class="guest-actions" id="guestActions">
+                <a href="../../login.html" class="btn-login">
+                    Iniciar sesión
+                </a>
+
+                <a href="../../register.html" class="btn-register">
+                    Crear cuenta
+                </a>
+            </div>
+
+            <!-- Usuario con sesión -->
+            <div class="user-menu hidden" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Alumno</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+                    <a href="../../perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <a href="../../historial.html">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Mi historial
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="topic-main">
+
+        <!-- PRESENTACIÓN DEL TEMA -->
+        <section class="topic-intro">
+
+            <div class="topic-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <p class="topic-label">
+                Operación matemática
+            </p>
+
+            <h2>Suma</h2>
+
+            <p class="topic-description">
+                Elige cómo deseas practicar. Puedes resolver operaciones
+                generadas automáticamente o realizar actividades creadas
+                por un maestro.
+            </p>
+
+        </section>
+
+        <!-- OPCIONES -->
+        <section class="topic-options">
+
+            <!-- PRACTICAR -->
+            <article class="option-card option-practice">
+
+                <div class="option-icon">
+                    <i class="fa-solid fa-dice"></i>
+                </div>
+
+                <h3>Practicar</h3>
+
+                <p>
+                    Resuelve ejercicios de suma generados aleatoriamente
+                    para mejorar tus habilidades.
+                </p>
+
+                <button
+                    type="button"
+                    class="option-button"
+                    data-action="practicar"
+                    data-tema="suma"
+                >
+                    Comenzar
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+            <!-- EJERCICIOS DEL MAESTRO -->
+            <article class="option-card option-teacher">
+
+                <div class="option-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <h3>Ejercicios del maestro</h3>
+
+                <p>
+                    Realiza actividades de suma preparadas por los docentes
+                    de MateKids UT.
+                </p>
+
+                <button
+                    type="button"
+                    class="option-button"
+                    data-action="maestro"
+                    data-tema="suma"
+                >
+                    Ver ejercicios
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="../../assets/js/session.js"></script>
+    <script src="../../assets/js/menu-tema.js"></script>    
+
+</body>
+
+</html>

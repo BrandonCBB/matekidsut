@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Crear cuenta</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/register.css">
+</head>
+
+<body>
+
+    <!-- Decoración -->
+    <div class="blob blob-top"></div>
+    <div class="blob blob-bottom"></div>
+
+    <!-- Botón volver -->
+    <a href="alumno.html" class="back-button">
+        <i class="fa-solid fa-chevron-left"></i>
+        Volver
+    </a>
+
+    <!-- Contenedor -->
+    <main class="register-container">
+
+        <div class="logo">
+            <span>M</span>
+        </div>
+
+        <h1>Crear cuenta</h1>
+        <p class="subtitle">Únete a MateKids UT hoy</p>
+
+        <!-- FORM -->
+        <form id="registerForm">
+
+            <!-- Nombre -->
+            <div class="input-box">
+                <label>Nombre</label>
+                <div class="input">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="nombre" placeholder="Sofía Valeria">
+                </div>
+                <small class="error-message"></small>
+            </div>
+
+            <!-- Apellido paterno -->
+            <div class="input-box">
+                <label>Apellido Paterno</label>
+                <div class="input">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="apPaterno" placeholder="Pérez">
+                </div>
+                <small class="error-message"></small>
+            </div>
+
+            <!-- Apellido materno -->
+            <div class="input-box">
+                <label>Apellido Materno</label>
+                <div class="input">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="apMaterno" placeholder="Martínez">
+                </div>
+                <small class="error-message"></small>
+            </div>
+
+            <!-- Correo -->
+            <div class="input-box">
+                <label>Correo electrónico</label>
+                <div class="input">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="correo" placeholder="correo@ejemplo.mx">
+                </div>
+                <small class="error-message"></small>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="input-box">
+                <label>Contraseña</label>
+                <div class="input password-input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Mínimo 6 caracteres">
+
+                    <button type="button" id="togglePassword" class="toggle-password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+                <small class="error-message"></small>
+            </div>
+
+            <!-- Confirmar contraseña -->
+            <div class="input-box">
+                <label>Confirmar contraseña</label>
+                <div class="input password-input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Repite tu contraseña">
+
+                    <button type="button" id="toggleConfirmPassword" class="toggle-password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+                <small class="error-message"></small>
+            </div>
+
+            <!-- Mensaje -->
+            <div id="registerMessage"></div>
+
+            <!-- Botón -->
+            <button type="submit" id="registerButton" class="primary-button">
+                <span>Crear cuenta</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </form>
+
+        <!-- Login link -->
+        <a href="login.html" class="register-button">
+            ¿Ya tienes cuenta? Inicia sesión
+        </a>
+
+        <div class="support-box">
+            <p>
+                ¿Eres maestro y gustas aportar?
+            </p>
+            <a href="#" id="supportLink">
+                Contacta a Soporte
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Loader -->
+    <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <p>Creando cuenta...</p>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/js/register.js"></script>
+
+</body>
+
+</html>

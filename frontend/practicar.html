@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MateKids UT | Practicar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/alumno.css">
+    <link rel="stylesheet" href="assets/css/practicar.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+</head>
+
+<body class="protected-page">
+
+    <header class="header">
+
+        <a href="alumno.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="alumno.html">Inicio</a>
+            <a href="ejercicios/suma/menu.html" data-categoria="suma">Suma</a>
+            <a href="ejercicios/resta/menu.html" data-categoria="resta">Resta</a>
+            <a href="ejercicios/multiplicacion/menu.html" data-categoria="multiplicacion">
+                Multiplicación
+            </a>
+            <a href="ejercicios/division/menu.html" data-categoria="division">División</a>
+        </nav>
+
+        <div class="header-account">
+
+            <div class="user-menu hidden" id="userMenu">
+
+                <button
+                    type="button"
+                    class="user-button"
+                    id="userButton"
+                >
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Alumno</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div
+                    class="user-dropdown hidden"
+                    id="userDropdown"
+                >
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <a href="historial.html">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Mi historial
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="practice-main">
+
+        <a href="alumno.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver al inicio
+        </a>
+
+        <section class="practice-header">
+
+            <p class="section-label">Práctica libre</p>
+
+            <h2 id="practiceTitle">
+                Practicar
+            </h2>
+
+            <p>
+                Resuelve las cinco operaciones y comprueba cuánto
+                aprendiste.
+            </p>
+
+        </section>
+
+        <section
+            class="practice-card"
+            id="practiceSection"
+        >
+
+            <div class="practice-progress">
+
+                <span id="questionCounter">
+                    Pregunta 1 de 5
+                </span>
+
+                <span id="categoryName">
+                    Suma
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+                <div
+                    class="progress-value"
+                    id="progressValue"
+                ></div>
+            </div>
+
+            <div class="operation-container">
+
+                <p class="operation-label">
+                    Resuelve la operación:
+                </p>
+
+                <div
+                    class="vertical-operation"
+                    id="operationText"
+                >
+                    <span class="operation-top">0</span>
+
+                    <div class="operation-bottom">
+                        <span class="operation-symbol">+</span>
+                        <span class="operation-number">0</span>
+                    </div>
+
+                    <div class="operation-line"></div>
+            </div>
+
+        </div>
+
+            <form id="practiceForm">
+
+                <label for="studentAnswer">
+                    Tu respuesta
+                </label>
+
+                <input
+                    type="number"
+                    id="studentAnswer"
+                    name="respuesta"
+                    placeholder="Escribe el resultado"
+                    step="any"
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="practice-button"
+                >
+                    Comprobar respuesta
+                </button>
+
+            </form>
+
+            <div
+                class="answer-feedback hidden"
+                id="answerFeedback"
+            ></div>
+
+        </section>
+
+        <section
+            class="practice-result hidden"
+            id="resultSection"
+        >
+
+            <div class="result-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <p class="section-label">
+                Práctica terminada
+            </p>
+
+            <h2>¡Terminaste las 5 preguntas!</h2>
+
+            <div class="result-grid">
+
+                <article>
+                    <span id="correctAnswers">0</span>
+                    <p>Aciertos</p>
+                </article>
+
+                <article>
+                    <span id="incorrectAnswers">0</span>
+                    <p>Errores</p>
+                </article>
+
+                <article>
+                    <span id="resultPercentage">0%</span>
+                    <p>Porcentaje</p>
+                </article>
+
+                <article>
+                    <span id="resultGrade">0</span>
+                    <p>Calificación</p>
+                </article>
+
+            </div>
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    class="practice-button"
+                    id="practiceAgainButton"
+                >
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Practicar otra vez
+                </button>
+
+                <a
+                    href="alumno.html"
+                    class="secondary-button"
+                >
+                    Volver al inicio
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="assets/js/practicar.js"></script>
+
+</body>
+
+</html>

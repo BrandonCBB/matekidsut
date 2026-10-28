@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Historial del alumno | MateKids UT
+    </title>
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/historial-alumno.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="maestro.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="maestro.html">Inicio</a>
+            <a href="maestro.html#misEjercicios">Mis ejercicios</a>
+            <a href="seguimiento.html" class="active">Alumnos</a>
+        </nav>
+
+        <div class="header-account">
+
+            <!-- Usuario con sesión -->
+            <div class="user-menu hidden" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Maestro</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="history-page">
+
+        <div class="history-page__container">
+
+            <a href="seguimiento.html" class="back-button">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver al seguimiento
+            </a>
+
+            <section class="student-hero">
+
+                <div class="student-hero__icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div class="student-hero__content">
+
+                    <span class="student-hero__label">
+                        Seguimiento académico
+                    </span>
+
+                    <h1 id="nombreAlumno">
+                        Historial del alumno
+                    </h1>
+
+                    <p id="correoAlumno">
+                        Consulta los ejercicios realizados,
+                        resultados y detalles de cada intento.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section
+                id="loadingState"
+                class="state-message"
+            >
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <p>
+                    Cargando historial...
+                </p>
+            </section>
+
+            <section
+                id="errorState"
+                class="state-message state-message--error"
+                hidden
+            >
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+                <p id="errorMessage">
+                    No se pudo cargar el historial.
+                </p>
+            </section>
+
+            <div
+                id="historyContent"
+                hidden
+            >
+
+                <section class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-card__icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div>
+                            <span>Promedio</span>
+
+                            <strong id="promedioAlumno">
+                                0
+                            </strong>
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <div class="stat-card__icon">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+
+                        <div>
+                            <span>Intentos</span>
+
+                            <strong id="totalIntentos">
+                                0
+                            </strong>
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <div class="stat-card__icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div>
+                            <span>Ejercicios</span>
+
+                            <strong id="ejerciciosRealizados">
+                                0
+                            </strong>
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <div class="stat-card__icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+
+                        <div>
+                            <span>Mejor calificación</span>
+
+                            <strong id="mejorCalificacion">
+                                0
+                            </strong>
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="history-section">
+
+                    <div class="history-section__heading">
+
+                        <div>
+                            <span class="section-label">
+                                Actividad
+                            </span>
+
+                            <h2>
+                                Intentos realizados
+                            </h2>
+                        </div>
+
+                        <div class="history-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="buscarIntento"
+                                placeholder="Buscar ejercicio..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="historialLista"
+                        class="history-list"
+                    ></div>
+
+                    <div
+                        id="emptyState"
+                        class="empty-state"
+                        hidden
+                    >
+                        <i class="fa-solid fa-folder-open"></i>
+
+                        <h3>
+                            No hay intentos
+                        </h3>
+
+                        <p id="emptyMessage">
+                            Este alumno todavía no ha realizado
+                            ejercicios del docente.
+                        </p>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/historial-alumno.js"></script>
+
+</body>
+
+</html>

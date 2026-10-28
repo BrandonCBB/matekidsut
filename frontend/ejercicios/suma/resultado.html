@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Resultado</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/alumno.css">
+    <link rel="stylesheet" href="../../assets/css/resultado.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="../../alumno.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="../../alumno.html">Inicio</a>
+
+            <a href="../suma/menu.html" data-nav-tema="Suma">
+                Suma
+            </a>
+
+            <a href="../resta/menu.html" data-nav-tema="Resta">
+                Resta
+            </a>
+
+            <a href="../multiplicacion/menu.html" data-nav-tema="Multiplicación">
+                Multiplicación
+            </a>
+
+            <a href="../division/menu.html" data-nav-tema="División">
+                División
+            </a>
+        </nav>
+
+        <div class="header-account">
+
+            <div class="user-menu" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Alumno</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+                    <a href="../../perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <a href="../../historial.html">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Mi historial
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- REGRESAR -->
+        <section class="result-navigation">
+            <a href="maestro.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver a los ejercicios
+            </a>
+        </section>
+
+        <!-- ERROR -->
+        <section id="estadoError" class="result-status hidden">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h2>No hay resultados disponibles</h2>
+
+            <p>
+                No encontramos información del ejercicio que acabas de resolver.
+            </p>
+
+            <a href="maestro.html" class="status-button">
+                Volver a los ejercicios
+            </a>
+        </section>
+
+        <!-- RESULTADO -->
+        <section id="contenidoResultado" class="result-container hidden">
+
+            <section class="result-summary">
+
+                <div class="result-icon">
+                    <i id="iconoResultado" class="fa-solid fa-trophy"></i>
+                </div>
+
+                <span id="categoriaResultado" class="result-category">
+                    Tema
+                </span>
+
+                <h2 id="tituloResultado">
+                    Resultado del ejercicio
+                </h2>
+
+                <p id="mensajeResultado">
+                    Has terminado el ejercicio.
+                </p>
+
+                <div class="result-score">
+                    <span id="calificacionResultado">0.0</span>
+                    <small>/ 10</small>
+                </div>
+
+                <div class="result-percentage">
+                    <span id="porcentajeResultado">0%</span>
+                </div>
+
+                <div class="result-stats">
+
+                    <div class="stat-card success">
+                        <i class="fa-solid fa-check"></i>
+
+                        <div>
+                            <span id="aciertosResultado">0</span>
+                            <p>Aciertos</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card error">
+                        <i class="fa-solid fa-xmark"></i>
+
+                        <div>
+                            <span id="erroresResultado">0</span>
+                            <p>Errores</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card total">
+                        <i class="fa-regular fa-circle-question"></i>
+
+                        <div>
+                            <span id="totalResultado">0</span>
+                            <p>Preguntas</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="answers-section">
+
+                <div class="answers-heading">
+                    <div>
+                        <span>Revisión</span>
+                        <h2>Tus respuestas</h2>
+                    </div>
+
+                    <p>
+                        Revisa cuáles respuestas fueron correctas y cuáles puedes mejorar.
+                    </p>
+                </div>
+
+                <div id="listaResultados" class="answers-list">
+                </div>
+
+            </section>
+
+            <section class="result-actions">
+
+                <a href="maestro.html" class="secondary-button">
+                    <i class="fa-solid fa-book-open"></i>
+                    Ver más ejercicios
+                </a>
+
+                <a href="../../alumno.html" class="primary-button">
+                    Volver al inicio
+                    <i class="fa-solid fa-house"></i>
+                </a>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../../assets/js/session.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/resultado.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Detalle del intento | MateKids UT</title>
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS del proyecto -->
+    <link
+        rel="stylesheet"
+        href="assets/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/detalle-intento-docente.css"
+    >
+</head>
+
+<body class="protected-page">
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header class="header">
+
+        <a
+            href="maestro.html"
+            class="logo-container"
+        >
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="maestro.html">
+                Inicio
+            </a>
+
+            <a href="maestro.html#misEjercicios">
+                Mis ejercicios
+            </a>
+
+            <a
+                href="seguimiento.html"
+                class="active"
+            >
+                Alumnos
+            </a>
+        </nav>
+
+        <div class="header-account">
+
+            <div
+                class="user-menu hidden"
+                id="userMenu"
+            >
+                <button
+                    type="button"
+                    class="user-button"
+                    id="userButton"
+                >
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">
+                        Maestro
+                    </span>
+
+                    <i
+                        class="fa-solid fa-chevron-down arrow-icon"
+                    ></i>
+                </button>
+
+                <div
+                    class="user-dropdown hidden"
+                    id="userDropdown"
+                >
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button
+                        type="button"
+                        id="logoutButton"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ========================================
+         CONTENIDO
+    ========================================= -->
+
+    <main class="detail-main">
+
+        <a
+            href="#"
+            class="detail-back-button"
+            id="backButton"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver al historial
+        </a>
+
+        <!-- Cargando -->
+
+        <section
+            class="loading-state"
+            id="loadingState"
+        >
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p>
+                Cargando detalle del intento...
+            </p>
+        </section>
+
+        <!-- Error -->
+
+        <section
+            class="error-state"
+            id="errorState"
+            hidden
+        >
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <h2>
+                No se pudo cargar el intento
+            </h2>
+
+            <p id="errorMessage">
+                Ocurrió un error al obtener la información.
+            </p>
+        </section>
+
+        <!-- Detalle -->
+
+        <div
+            id="detailContent"
+            hidden
+        >
+
+            <!-- Alumno y calificación -->
+
+            <section class="detail-hero">
+
+                <div class="detail-hero-information">
+
+                    <p class="detail-section-label">
+                        Seguimiento del alumno
+                    </p>
+
+                    <h2 id="studentName">
+                        Alumno
+                    </h2>
+
+                    <p
+                        class="detail-exercise-title"
+                        id="exerciseTitle"
+                    >
+                        Ejercicio
+                    </p>
+
+                </div>
+
+                <div class="grade-card">
+
+                    <span>
+                        Calificación
+                    </span>
+
+                    <strong id="gradeValue">
+                        0.0
+                    </strong>
+
+                </div>
+
+            </section>
+
+            <!-- Estadísticas -->
+
+            <section class="summary-grid">
+
+                <article class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="summary-information">
+                        <span>Fecha</span>
+
+                        <strong id="attemptDate">
+                            Sin fecha
+                        </strong>
+                    </div>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+
+                    <div class="summary-information">
+                        <span>Porcentaje</span>
+
+                        <strong id="percentageValue">
+                            0%
+                        </strong>
+                    </div>
+
+                </article>
+
+                <article class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div class="summary-information">
+                        <span>Aciertos</span>
+
+                        <strong id="correctAnswers">
+                            0
+                        </strong>
+                    </div>
+
+                </article>
+
+                <article class="summary-card summary-error">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+
+                    <div class="summary-information">
+                        <span>Errores</span>
+
+                        <strong id="wrongAnswers">
+                            0
+                        </strong>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- Información del ejercicio -->
+
+            <section class="exercise-information">
+
+                <div class="detail-section-header">
+
+                    <div>
+                        <p class="detail-section-label">
+                            Información del ejercicio
+                        </p>
+
+                        <h2 id="exerciseName">
+                            Ejercicio
+                        </h2>
+                    </div>
+
+                    <span
+                        class="question-total"
+                        id="questionTotal"
+                    >
+                        0 preguntas
+                    </span>
+
+                </div>
+
+                <p
+                    class="exercise-description"
+                    id="exerciseDescription"
+                >
+                    Sin descripción.
+                </p>
+
+            </section>
+
+            <!-- Respuestas -->
+
+            <section class="answers-section">
+
+                <div class="detail-section-header">
+
+                    <div>
+                        <p class="detail-section-label">
+                            Respuestas
+                        </p>
+
+                        <h2>
+                            Detalle de preguntas
+                        </h2>
+                    </div>
+
+                </div>
+
+                <div
+                    class="answers-list"
+                    id="answersList"
+                ></div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="footer">
+        <p>
+            © 2026 MateKids UT. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/detalle-intento-docente.js"></script>
+
+</body>
+
+</html>

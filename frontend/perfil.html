@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Mi perfil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+</head>
+
+<body class="protected-page">
+
+    <header class="header">
+
+        <a href="alumno.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="#" class="role-home-link">Inicio</a>
+            <a href="perfil.html" class="active">Mi perfil</a>
+        </nav>
+
+        <div class="header-account">
+            <div class="user-menu" id="userMenu">
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Usuario</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="profile-main">
+
+        <section class="profile-heading">
+            <p class="section-label">Cuenta</p>
+
+            <h2>Mi perfil</h2>
+
+            <p>
+                Consulta y actualiza la información de tu cuenta.
+            </p>
+        </section>
+
+        <section class="profile-grid">
+
+            <!-- INFORMACIÓN PERSONAL -->
+            <article class="profile-card">
+
+                <div class="profile-summary">
+
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <h3 id="profileFullName">
+                            Nombre del usuario
+                        </h3>
+
+                        <span class="role-badge" id="profileRole">
+                            Usuario
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="profile-data">
+
+                    <div class="profile-field">
+                        <span>Nombre</span>
+                        <strong id="profileName">—</strong>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Apellido paterno</span>
+                        <strong id="profileLastName">—</strong>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Apellido materno</span>
+                        <strong id="profileSecondLastName">—</strong>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Correo electrónico</span>
+                        <strong id="profileEmail">—</strong>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Fecha de registro</span>
+                        <strong id="profileDate">—</strong>
+                    </div>
+
+                </div>
+
+                <button type="button" class="profile-button" id="editProfileButton">
+                    <i class="fa-solid fa-pen"></i>
+                    Editar información
+                </button>
+
+            </article>
+
+            <!-- SEGURIDAD -->
+            <article class="security-card">
+
+                <div class="card-title">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <div>
+                        <p class="section-label">Seguridad</p>
+                        <h3>Cambiar contraseña</h3>
+                    </div>
+                </div>
+
+                <form id="passwordForm" class="security-form">
+
+                    <div class="security-field">
+                        <label for="currentPassword">
+                            Contraseña actual
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            name="currentPassword"
+                            placeholder="Ingresa tu contraseña actual"
+                            required
+                        >
+                    </div>
+
+                    <div class="security-field">
+                        <label for="newPassword">
+                            Nueva contraseña
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            name="newPassword"
+                            placeholder="Mínimo 8 caracteres"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="security-field">
+                        <label for="confirmPassword">
+                            Confirmar nueva contraseña
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Repite la nueva contraseña"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="profile-button">
+                        <i class="fa-solid fa-key"></i>
+                        Cambiar contraseña
+                    </button>
+
+                </form>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/perfil.js"></script>
+
+</body>
+
+</html>

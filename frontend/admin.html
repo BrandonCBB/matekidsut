@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MateKids UT | Panel de administrador</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/toast.css"> 
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body class="protected-page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="admin.html" class="logo-container">
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="admin.html" class="active">Inicio</a>
+            <a href="#usuarios">Usuarios</a>
+            <a href="#docentes">Docentes</a>
+            <a href="#ejercicios">Ejercicios</a>
+        </nav>
+
+        <div class="header-account">
+
+            <!-- Usuario con sesión -->
+            <div class="user-menu hidden" id="userMenu">
+
+                <button type="button" class="user-button" id="userButton">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="userName">Administrador</span>
+
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+
+                <div class="user-dropdown hidden" id="userDropdown">
+
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        Mi perfil
+                    </a>
+
+                    <button type="button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="admin-main">
+
+        <!-- BIENVENIDA -->
+        <section class="admin-welcome">
+
+            <div>
+                <p class="section-label">Panel de administrador</p>
+
+                <h2>
+                    Buenos días,
+                    <span id="adminName">administrador</span>
+                    👋
+                </h2>
+
+                <p>
+                    Administra usuarios, docentes y ejercicios desde un solo lugar.
+                </p>
+            </div>
+
+            <button type="button" class="add-teacher-button" id="addUserButton">
+                <i class="fa-solid fa-user-plus"></i>
+                Nuevo usuario
+            </button>
+
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+        <section class="admin-stats">
+
+            <article class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="studentCount">0</span>
+                    <p>Alumnos registrados</p>
+                </div>
+            </article>
+
+            <article class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="teacherCount">0</span>
+                    <p>Docentes activos</p>
+                </div>
+            </article>
+
+            <article class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="exerciseCount">0</span>
+                    <p>Ejercicios creados</p>
+                </div>
+            </article>
+
+            <article class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-slash"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="inactiveCount">0</span>
+                    <p>Usuarios inactivos</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- GESTIÓN -->
+        <section class="management-grid">
+
+            <!-- USUARIOS -->
+            <article class="management-panel" id="usuarios">
+
+                <div class="panel-header">
+                    <div>
+                        <p class="section-label">Gestión</p>
+                        <h2>Alumnos</h2>
+                    </div>
+                </div>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="studentSearch"
+                        placeholder="Buscar alumno..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="management-list" id="studentList">
+
+                    <div class="empty-list">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <p>No hay alumnos para mostrar.</p>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- DOCENTES -->
+            <article class="management-panel" id="docentes">
+
+                <div class="panel-header">
+                    <div>
+                        <p class="section-label">Gestión</p>
+                        <h2>Docentes</h2>
+                    </div>
+                </div>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="teacherSearch"
+                        placeholder="Buscar docente..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="management-list" id="teacherList">
+
+                    <div class="empty-list">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <p>No hay docentes para mostrar.</p>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- EJERCICIOS -->
+            <article class="management-panel" id="ejercicios">
+
+                <div class="panel-header">
+                    <div>
+                        <p class="section-label">Gestión</p>
+                        <h2>Ejercicios</h2>
+                    </div>
+                </div>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="exerciseSearch"
+                        placeholder="Buscar ejercicio..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="management-list" id="exerciseList">
+
+                    <div class="empty-list">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <p>No hay ejercicios para mostrar.</p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 MateKids UT. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/admin.js"></script>
+
+</body>
+
+</html>

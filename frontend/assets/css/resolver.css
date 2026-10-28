@@ -1,0 +1,423 @@
+/* ========================================
+   PÁGINA RESOLVER EJERCICIO
+======================================== */
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* ========================================
+   REGRESAR
+======================================== */
+
+.resolver-navigation {
+    width: min(1180px, 88%);
+    margin: 32px auto 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--gray);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.back-link:hover {
+    color: var(--navy);
+    transform: translateX(-3px);
+}
+
+/* ========================================
+   ESTADOS DE CARGA Y ERROR
+======================================== */
+
+.resolver-status {
+    width: min(760px, 88%);
+    min-height: 280px;
+    margin: 55px auto 80px;
+    padding: 42px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(31, 35, 89, 0.06);
+}
+
+.resolver-status > i {
+    margin-bottom: 18px;
+
+    color: var(--green-dark);
+    font-size: 2.5rem;
+}
+
+.resolver-status h2 {
+    margin: 0 0 10px;
+
+    color: var(--navy);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.resolver-status p {
+    max-width: 520px;
+    margin: 0;
+
+    color: var(--gray);
+    line-height: 1.65;
+}
+
+.status-button {
+    margin-top: 24px;
+    padding: 12px 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--navy);
+    font-weight: 700;
+    text-decoration: none;
+
+    background: var(--green);
+    border-radius: 12px;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.status-button:hover {
+    color: var(--white);
+    background: var(--green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(63, 143, 99, 0.24);
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+======================================== */
+
+.resolver-container {
+    width: min(920px, 88%);
+    margin: 45px auto 80px;
+}
+
+/* ========================================
+   INFORMACIÓN DEL EJERCICIO
+======================================== */
+
+.resolver-heading {
+    margin-bottom: 32px;
+    padding: 32px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(31, 35, 89, 0.06);
+}
+
+.resolver-category {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 13px;
+    margin-bottom: 16px;
+
+    color: var(--green-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    background: rgba(143, 220, 167, 0.28);
+    border-radius: 20px;
+}
+
+.resolver-heading h2 {
+    margin: 0;
+
+    color: var(--navy);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.resolver-heading > p {
+    margin: 15px 0 0;
+
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.resolver-meta {
+    margin-top: 24px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.resolver-meta > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resolver-meta i {
+    color: var(--green-dark);
+}
+
+/* ========================================
+   LISTA DE PREGUNTAS
+======================================== */
+
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.question-card {
+    padding: 28px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 10px 26px rgba(31, 35, 89, 0.05);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+.question-card:focus-within {
+    border-color: var(--green);
+    box-shadow: 0 14px 32px rgba(63, 143, 99, 0.12);
+    transform: translateY(-2px);
+}
+
+.question-number {
+    margin-bottom: 12px;
+
+    color: var(--green-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.question-card > label {
+    display: block;
+    margin-bottom: 18px;
+
+    color: var(--navy);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+/* ========================================
+   CAMPO DE RESPUESTA
+======================================== */
+
+.answer-field {
+    position: relative;
+}
+
+.answer-field > i {
+    position: absolute;
+    top: 50%;
+    left: 17px;
+
+    color: var(--gray);
+    font-size: 0.95rem;
+
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.answer-input {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 18px 14px 46px;
+
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 1rem;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.answer-input::placeholder {
+    color: var(--placeholder);
+}
+
+.answer-input:focus {
+    border-color: var(--green-dark);
+    box-shadow: 0 0 0 4px rgba(143, 220, 167, 0.2);
+}
+
+.answer-input.input-error {
+    border-color: #d9534f;
+    background: rgba(217, 83, 79, 0.04);
+    box-shadow: 0 0 0 4px rgba(217, 83, 79, 0.1);
+}
+
+.question-error {
+    margin: 10px 0 0;
+
+    color: #c33f3a;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   ACCIONES
+======================================== */
+
+.resolver-actions {
+    margin-top: 32px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.finish-button {
+    min-width: 220px;
+    padding: 14px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 0.96rem;
+    font-weight: 700;
+
+    background: var(--green);
+    border: none;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.finish-button:hover:not(:disabled) {
+    color: var(--white);
+    background: var(--green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(63, 143, 99, 0.24);
+}
+
+.finish-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   UTILIDADES
+======================================== */
+
+.resolver-status.hidden,
+.resolver-container.hidden,
+.question-error.hidden {
+    display: none;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    .resolver-navigation,
+    .resolver-container {
+        width: 90%;
+    }
+
+    .resolver-heading {
+        padding: 24px;
+    }
+
+    .question-card {
+        padding: 22px;
+    }
+
+    .resolver-actions {
+        justify-content: stretch;
+    }
+
+    .finish-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .resolver-navigation {
+        margin-top: 24px;
+    }
+
+    .resolver-container {
+        margin-top: 32px;
+    }
+
+    .resolver-heading h2 {
+        font-size: 1.9rem;
+    }
+
+    .resolver-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .question-card > label {
+        font-size: 1.05rem;
+    }
+}

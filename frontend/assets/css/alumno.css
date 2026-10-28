@@ -1,0 +1,415 @@
+/* ========================================
+   PÁGINA PRINCIPAL DEL ALUMNO
+======================================== */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    flex: 1;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 90px;
+    margin: 0;
+    padding: 14px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-container .logo {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.logo-container h1 {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--navy);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header nav a {
+    position: relative;
+
+    color: var(--gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color var(--transition);
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: var(--navy);
+}
+
+.header nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--green);
+    border-radius: 20px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-login,
+.btn-register {
+    padding: 11px 20px;
+    border-radius: 12px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+.btn-login {
+    color: var(--green-dark);
+    border: 2px solid var(--green);
+    background: var(--white);
+}
+
+.btn-login:hover {
+    color: var(--white);
+    background: var(--green);
+    transform: translateY(-2px);
+}
+
+.btn-register {
+    color: var(--white);
+    border: 2px solid var(--green);
+    background: var(--green);
+}
+
+.btn-register:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    box-shadow: 0 8px 18px rgba(63, 143, 99, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   BIENVENIDA
+======================================== */
+
+.welcome {
+    width: min(900px, 90%);
+    margin: 70px auto 35px;
+    text-align: center;
+}
+
+.welcome h2 {
+    margin-bottom: 15px;
+
+    color: var(--navy);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.welcome p {
+    max-width: 720px;
+    margin: 0 auto;
+
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ========================================
+   BANNER / CARRUSEL
+======================================== */
+
+.banner {
+    position: relative;
+
+    width: min(1180px, 90%);
+    min-height: 370px;
+    margin: 45px auto 80px;
+    padding: 55px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: var(--radius);
+
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255, 255, 255, 0.28),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green-dark)
+        );
+
+    box-shadow: var(--shadow);
+}
+
+/* Contenido temporal */
+
+.banner::before {
+    content: "Aprende, practica y mejora";
+    position: relative;
+    z-index: 2;
+
+    max-width: 550px;
+
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.banner::after {
+    content: "+  −  ×  ÷";
+    position: absolute;
+    right: 7%;
+    top: 50%;
+
+    transform: translateY(-50%) rotate(-8deg);
+
+    color: rgba(255, 255, 255, 0.18);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    letter-spacing: 12px;
+}
+
+/* ========================================
+   SECCIÓN DE TEMAS
+======================================== */
+
+.topics {
+    width: min(1180px, 90%);
+    margin: 0 auto 90px;
+}
+
+.topics > h2 {
+    margin-bottom: 35px;
+
+    color: var(--navy);
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    min-height: 290px;
+    padding: 32px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    cursor: pointer;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--green);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.12);
+}
+
+.card i {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 24px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--white);
+    font-size: 2rem;
+
+    background: var(--green);
+    border-radius: 20px;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+.card:hover i {
+    background: var(--green-dark);
+    transform: scale(1.1) rotate(4deg);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    color: var(--navy);
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 950px) {
+    .header nav {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner {
+        min-height: 320px;
+        padding: 40px;
+    }
+
+    .banner::after {
+        opacity: 0.65;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        min-height: auto;
+        padding: 12px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo-container h1 {
+        font-size: 1.05rem;
+    }
+
+    .user-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-login,
+    .btn-register {
+        flex: 1;
+        max-width: 180px;
+        padding: 10px 12px;
+        text-align: center;
+    }
+
+    .welcome {
+        margin-top: 45px;
+    }
+
+    .welcome p {
+        font-size: 0.95rem;
+    }
+
+    .banner {
+        min-height: 280px;
+        margin-bottom: 60px;
+        padding: 30px;
+        border-radius: 24px;
+    }
+
+    .banner::before {
+        max-width: 90%;
+    }
+
+    .banner::after {
+        right: -20px;
+        bottom: 15px;
+        top: auto;
+
+        transform: rotate(-8deg);
+        font-size: 4rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 250px;
+    }
+}

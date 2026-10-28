@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        MateKids UT | Detalle del intento
+    </title>
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="assets/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/alumno.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/detalle-intento.css"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a
+            href="alumno.html"
+            class="logo-container"
+        >
+            <div class="logo">
+                <span>M</span>
+            </div>
+
+            <h1>MateKids UT</h1>
+        </a>
+
+        <nav>
+            <a href="alumno.html">
+                Inicio
+            </a>
+
+            <a href="ejercicios/suma/menu.html">
+                Suma
+            </a>
+
+            <a href="ejercicios/resta/menu.html">
+                Resta
+            </a>
+
+            <a href="ejercicios/multiplicacion/menu.html">
+                Multiplicación
+            </a>
+
+            <a href="ejercicios/division/menu.html">
+                División
+            </a>
+        </nav>
+
+        <div class="header-account">
+
+            <div
+                class="user-menu"
+                id="userMenu"
+            >
+
+                <button
+                    type="button"
+                    class="user-button"
+                    id="userButton"
+                >
+                    <i
+                        class="fa-solid fa-circle-user"
+                    ></i>
+
+                    <span id="userName">
+                        Alumno
+                    </span>
+
+                    <i
+                        class="fa-solid fa-chevron-down arrow-icon"
+                    ></i>
+                </button>
+
+                <div
+                    class="user-dropdown hidden"
+                    id="userDropdown"
+                >
+
+                    <a href="perfil.html">
+                        <i
+                            class="fa-solid fa-user"
+                        ></i>
+
+                        Mi perfil
+                    </a>
+
+                    <a href="historial.html">
+                        <i
+                            class="fa-solid fa-clock-rotate-left"
+                        ></i>
+
+                        Mi historial
+                    </a>
+
+                    <button
+                        type="button"
+                        id="logoutButton"
+                    >
+                        <i
+                            class="fa-solid fa-right-from-bracket"
+                        ></i>
+
+                        Cerrar sesión
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="attempt-detail-main">
+
+        <!-- REGRESAR -->
+        <section class="attempt-navigation">
+
+            <a
+                href="historial.html"
+                class="back-link"
+            >
+                <i
+                    class="fa-solid fa-arrow-left"
+                ></i>
+
+                Volver al historial
+            </a>
+
+        </section>
+
+        <!-- CARGANDO -->
+        <section
+            id="estadoCarga"
+            class="attempt-status"
+        >
+
+            <i
+                class="fa-solid fa-spinner fa-spin"
+            ></i>
+
+            <h2>
+                Cargando el detalle...
+            </h2>
+
+            <p>
+                Espera un momento mientras recuperamos
+                las respuestas del ejercicio.
+            </p>
+
+        </section>
+
+        <!-- ERROR -->
+        <section
+            id="estadoError"
+            class="attempt-status hidden"
+        >
+
+            <i
+                class="fa-solid fa-triangle-exclamation"
+            ></i>
+
+            <h2>
+                No se pudo cargar el intento
+            </h2>
+
+            <p id="mensajeError">
+                Ocurrió un problema inesperado.
+            </p>
+
+            <button
+                type="button"
+                id="btnReintentar"
+                class="status-button"
+            >
+                Intentar de nuevo
+            </button>
+
+        </section>
+
+        <!-- CONTENIDO -->
+        <div
+            id="contenidoDetalle"
+            class="hidden"
+        >
+
+            <!-- PRESENTACIÓN -->
+            <section class="attempt-hero">
+
+                <div class="attempt-hero__content">
+
+                    <span
+                        id="categoriaIntento"
+                        class="attempt-category"
+                    >
+                        Categoría
+                    </span>
+
+                    <h2 id="tituloIntento">
+                        Ejercicio
+                    </h2>
+
+                    <p id="descripcionIntento">
+                        Descripción del ejercicio
+                    </p>
+
+                    <div class="attempt-meta">
+
+                        <span>
+                            <i
+                                class="fa-solid fa-chalkboard-user"
+                            ></i>
+
+                            <strong>Docente:</strong>
+
+                            <span id="docenteIntento">
+                                No disponible
+                            </span>
+                        </span>
+
+                        <span>
+                            <i
+                                class="fa-regular fa-calendar"
+                            ></i>
+
+                            <strong>Fecha:</strong>
+
+                            <span id="fechaIntento">
+                                No disponible
+                            </span>
+                        </span>
+
+                        <span>
+                            <i
+                                class="fa-regular fa-clock"
+                            ></i>
+
+                            <strong>Hora:</strong>
+
+                            <span id="horaIntento">
+                                No disponible
+                            </span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="attempt-grade">
+
+                    <span id="calificacionIntento">
+                        0.0
+                    </span>
+
+                    <small>/ 10</small>
+
+                </div>
+
+            </section>
+
+            <!-- RESUMEN -->
+            <section class="attempt-summary">
+
+                <article
+                    class="attempt-summary-card success"
+                >
+                    <i
+                        class="fa-solid fa-check"
+                    ></i>
+
+                    <div>
+                        <span id="aciertosIntento">
+                            0
+                        </span>
+
+                        <p>Aciertos</p>
+                    </div>
+                </article>
+
+                <article
+                    class="attempt-summary-card error"
+                >
+                    <i
+                        class="fa-solid fa-xmark"
+                    ></i>
+
+                    <div>
+                        <span id="erroresIntento">
+                            0
+                        </span>
+
+                        <p>Errores</p>
+                    </div>
+                </article>
+
+                <article
+                    class="attempt-summary-card total"
+                >
+                    <i
+                        class="fa-regular fa-circle-question"
+                    ></i>
+
+                    <div>
+                        <span id="totalPreguntasIntento">
+                            0
+                        </span>
+
+                        <p>Preguntas</p>
+                    </div>
+                </article>
+
+                <article
+                    class="attempt-summary-card percentage"
+                >
+                    <i
+                        class="fa-solid fa-chart-simple"
+                    ></i>
+
+                    <div>
+                        <span id="porcentajeIntento">
+                            0%
+                        </span>
+
+                        <p>Porcentaje</p>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- ENCABEZADO DE RESPUESTAS -->
+            <section class="answers-heading">
+
+                <div>
+                    <span>
+                        Revisión
+                    </span>
+
+                    <h2>
+                        Respuestas del ejercicio
+                    </h2>
+                </div>
+
+                <p>
+                    Revisa cuáles respuestas fueron correctas
+                    y cuáles puedes mejorar.
+                </p>
+
+            </section>
+
+            <!-- LISTA DE RESPUESTAS -->
+            <section
+                id="listaRespuestas"
+                class="answers-list"
+            >
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>
+            © 2026 MateKids UT.
+            Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/detalle-intento.js"></script>
+
+</body>
+
+</html>
